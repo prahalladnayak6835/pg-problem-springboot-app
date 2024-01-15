@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--    <meta charset="UTF-8">-->
+    <title>Registration Form</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: flex;
+    padding-left:40px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+select {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select {
+    height: 40px;
+    width:85%;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    margin-top:40px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+br {
+    display: none;
+}
+
+    </style>
+</head>
+<body>
+<h1>Registration Form</h1>
+<form action="/user/register" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+
+    <label for="roomNo">Room Number:</label>
+    <input type="number" id="roomNo" name="roomNo" required>
+    <br>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+    <br>
+
+    <label for="problem">Problem:</label>
+    <input type="text" id="problem" name="problem" required>
+    <br>
+
+    <label for="problemDescp">Problem Description:</label>
+    <input type="text" id="problemDescp" name="problemDescp" required>
+    <br>
+
+    <label for="complainRaisedBy">Complain Raised By:</label>
+    <input type="text" id="complainRaisedBy" name="complainRaisedBy"  required>
+    <br>
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber"  required>
+    <br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"  required>
+    <br>
+
+    <label for="status">Status:</label>
+    <select name="status" id="status">
+        <option value="">Select</option>
+        <option value="Raised">Raised</option>
+        <option value="Pending">Pending</option>
+        <option value="Completed">Completed</option>
+    </select><br>
+
+    <input type="submit" value="Register">
+</form>
+</body>
+</html>

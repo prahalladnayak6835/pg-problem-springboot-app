@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--    <meta charset="UTF-8">-->
+    <title>Model List</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 20px;
+  margin: 0;
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+th {
+  background-color: #007BFF;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+a.btn {
+  text-decoration: none;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  display: inline-block;
+}
+
+a.btn:hover {
+  background-color: #0056b3;
+}
+
+.border-bottom-0 {
+  border-bottom: none;
+}
+    </style>
+</head>
+<body>
+<h1>Your complain Details</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Room No</th>
+        <th>Problem</th>
+        <th>Problem Description</th>
+        <th>Complain Raised By</th>
+        <th>Phone Number</th>
+        <th>Email Id</th>
+        <th>Status</th>
+        <th>Action</th>
+
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.roomNo}"></td>
+        <td th:text="${user.problem}"></td>
+        <td th:text="${user.problemDescp}"></td>
+        <td th:text="${user.complainRaisedBy}"></td>
+        <td th:text="${user.phoneNumber}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.status}"></td>
+        <td class="border-bottom-0">
+<!--            <a th:href="@{'/admin/edit/' + ${user.id}}" class="btn btn-primary">Update</a><br><br>-->
+            <a th:href="@{'/user/delete/' + ${user.id}}" class="btn btn-primary">Delete</a>
+        </td>
+
+
+    </tr>
+</table>
+</body>
+</html>

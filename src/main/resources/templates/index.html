@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Welcome to PG Website</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>Welcome to Bengaluru PG</header>
+
+
+<button><a th:href="@{/admin}">Owner Login</a></button>
+<button><a th:href="@{/user}">User Login</a></button>
+<button><a th:href="@{/visitor}">Visitor Login</a></button>
+
+
+</body>
+</html>
